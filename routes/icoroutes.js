@@ -1,43 +1,33 @@
-const express = require('express')
+const express = require("express");
 const router = express.Router();
 
-const icoController = require('../controller/icocontroller');
+const icoController = require("../controller/icocontroller");
 
-router.get('/balance', icoController.getethBalance );
+router.get("/balance", icoController.getethBalance);
 
-router.get('/ico', icoController.getICO );
+router.get("/ico", icoController.getICO);
 
-router.get('/allico', icoController.getallICO );
+// some routes were removed
 
-router.get('/icomap/:id', icoController.getICOMap );
+router.get("/buyico", icoController.BuyICOToken);
 
-router.get('/tokenbalance', icoController.gettokenBalance );
+router.get("/sellico", icoController.SellICOToken);
 
-router.get('/mybalance', icoController.getMyTokenBalance );
+router.get("/changePrice", icoController.ChangePrice);
 
-router.get('/events', icoController.getEvents );
+router.get("/withdraw", icoController.EtherWithdraw);
 
-router.get('/createico', icoController.CreateICO );
-
-router.get('/buyico', icoController.BuyICOToken );
-
-router.get('/sellico', icoController.SellICOToken );
-
-router.get('/changePrice', icoController.ChangePrice );
-
-router.get('/withdraw', icoController.EtherWithdraw );
-
-router.get('/time', icoController.getCurrentTime );
+router.get("/time", icoController.getCurrentTime);
 
 // Installments
-router.get('/totalinstallment', icoController.getTotalInstallmentToken );
+router.get("/totalinstallment", icoController.getTotalInstallmentToken);
 
-router.get('/myinstallment', icoController.getMyInstallmentToken );
+router.get("/myinstallment", icoController.getMyInstallmentToken);
 
-router.get('/myallinstallment/:address', icoController.getMyAllInstallment );
+router.get("/myallinstallment/:address", icoController.getMyAllInstallment);
 
-router.get('/installment', icoController.Installment );
+router.get("/installment", icoController.Installment);
 
-router.get('/icoinstallment', icoController.getICOInstallment );
+router.get("/icoinstallment", icoController.getICOInstallment);
 
 module.exports = router;
